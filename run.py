@@ -25,7 +25,7 @@ def main():
     app = QApplication(sys.argv)
     window = QMainWindow()
     window.setWindowTitle("TurboClone")
-    window.setFixedSize(400, 200)
+    window.setFixedSize(200, 200)
 
     # Create central widget and layout
     central_widget = QWidget()
