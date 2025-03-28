@@ -18,31 +18,49 @@ import os
 import subprocess
 import re
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget, QMessageBox, QHBoxLayout
+
+
+def is_valid_github_url(url):
+    """Check if the URL is a valid GitHub repository URL."""
+    return bool(re.match(r"https://github\.com/.+/.+", url))
 
 
 def main():
     app = QApplication(sys.argv)
     window = QMainWindow()
     window.setWindowTitle("TurboClone")
-    window.setFixedSize(200, 200)
+    window.setFixedSize(450, 80)
 
     # Create central widget and layout
     central_widget = QWidget()
     layout = QVBoxLayout(central_widget)
+    layout.setContentsMargins(10, 10, 10, 10)
 
     # Create a label for the input field
-    label = QLabel("Enter GitHub repository URL:")
+    label = QLabel("Repository URL:")
     layout.addWidget(label)
+
+    # Create horizontal layout for input field and button
+    input_layout = QHBoxLayout()
+    input_layout.setSpacing(10)  # Add space between input and button
+    layout.addLayout(input_layout)
 
     # Create an input field
     entry = QLineEdit()
-    layout.addWidget(entry)
+    input_layout.addWidget(entry, 4)  # Give the entry field more stretch
+
+    # Check clipboard for GitHub URL and populate input field
+    clipboard = app.clipboard()
+    clipboard_text = clipboard.text()
+    if is_valid_github_url(clipboard_text):
+        entry.setText(clipboard_text)
 
     # Create a button to clone the repository
     clone_button = QPushButton("Clone")
     clone_button.clicked.connect(lambda: clone_repo(entry.text()))
-    layout.addWidget(clone_button)
+    clone_button.setFixedWidth(80)  # Set fixed width for the button
+    input_layout.addWidget(clone_button, 1)
 
     # Set the central widget
     window.setCentralWidget(central_widget)
@@ -58,8 +76,8 @@ def main():
 
 
 def clone_repo(url):
-    # Check if the URL is valid
-    if not re.match(r"https://github\.com/.+/.+", url):
+    # Check if the URL is valid using the shared validation function
+    if not is_valid_github_url(url):
         QMessageBox.critical(None, "Error", "Invalid GitHub repository URL")
         return
 
