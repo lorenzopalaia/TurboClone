@@ -87,7 +87,6 @@ export default function Hero() {
                   height={765}
                   preload="metadata"
                   aria-label="Demo of TurboClone"
-                  poster="/assets/demo-poster.jpg"
                 >
                   <source src="/assets/demo.mp4" type="video/mp4" />
                   <track
