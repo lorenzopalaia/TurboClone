@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { BadgeCheck, Clipboard, Github, MousePointerClick } from "lucide-react";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { ItemIcon } from "../ui/item";
 
 export default function Installation() {
   const [copied, setCopied] = useState(false);
@@ -58,13 +59,13 @@ export default function Installation() {
               Open Terminal and run the following command:
             </p>
 
-            <div className="relative">
-              <div className="bg-muted flex items-center overflow-x-auto rounded-lg p-4 font-mono text-sm">
-                <code>{installCommand}</code>
+            <div className="group relative">
+              <div className="bg-muted flex items-center rounded-lg p-4 font-mono text-sm">
+                <code className="pr-8 break-all">{installCommand}</code>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="ml-auto shrink-0 cursor-pointer"
+                  className="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer opacity-0 transition-opacity group-hover:opacity-100"
                   onClick={handleCopy}
                 >
                   {copied ? (
@@ -102,8 +103,10 @@ export default function Installation() {
                   automatically detect it from your clipboard.
                 </p>
               </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg p-4">
-                <Github className="text-brand h-12 w-12" />
+              <div className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4">
+                <ItemIcon>
+                  <Github className="text-brand h-8 w-8 stroke-1" />
+                </ItemIcon>
               </div>
             </div>
           </div>
@@ -128,8 +131,10 @@ export default function Installation() {
                   to enter a repository URL.
                 </p>
               </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg p-4">
-                <MousePointerClick className="text-brand h-12 w-12" />
+              <div className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4">
+                <ItemIcon>
+                  <MousePointerClick className="text-brand h-8 w-8 stroke-1" />
+                </ItemIcon>
               </div>
             </div>
           </div>

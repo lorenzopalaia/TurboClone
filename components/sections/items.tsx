@@ -1,4 +1,4 @@
-import { GitForkIcon, ClipboardCopyIcon, AppleIcon } from "lucide-react";
+import { GitForkIcon, ClipboardCopyIcon, ComputerIcon } from "lucide-react";
 import { Item, ItemIcon, ItemTitle, ItemDescription } from "../ui/item";
 import { Section } from "../ui/section";
 
@@ -54,7 +54,7 @@ export default function Items() {
             <div className="text-foreground flex flex-row items-center gap-4 p-4">
               <div className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4">
                 <ItemIcon>
-                  <AppleIcon className="text-brand h-8 w-8 stroke-1" />
+                  <ComputerIcon className="text-brand h-8 w-8 stroke-1" />
                 </ItemIcon>
               </div>
               <div className="flex flex-col gap-2">
