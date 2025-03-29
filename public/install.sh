@@ -7,7 +7,15 @@ INSTALL_DIR="$HOME/.turboclone"
 SERVICE_NAME="TurboClone"
 AUTOMATOR_DIR="$HOME/Library/Services"
 WORKFLOW_PATH="$AUTOMATOR_DIR/$SERVICE_NAME.workflow"
-BASE_URL="https://turboclone.lorenzopalaia.com"
+
+# Check if running in Vercel environment
+if [ "$VERCEL_ENV" = "production" ]; then
+  BASE_URL="https://turboclone.lorenzopalaia.com"
+  echo "🌎 Production mode: using $BASE_URL"
+else
+  BASE_URL="http://localhost:3000"
+  echo "🧪 Development mode: using $BASE_URL"
+fi
 
 echo "🚀 Installing TurboClone..."
 
@@ -28,12 +36,12 @@ mkdir -p "$INSTALL_DIR"
 
 # Download run.py from website
 echo "⬇️  Downloading run.py..."
-curl -sS "$BASE_URL/run.py" -o "$INSTALL_DIR/run.py"
+curl -sS "$BASE_URL/app/run.py" -o "$INSTALL_DIR/run.py"
 chmod +x "$INSTALL_DIR/run.py"
 
 # Download requirements.txt and install dependencies
 echo "⬇️  Downloading requirements.txt..."
-curl -sS "$BASE_URL/requirements.txt" -o "$INSTALL_DIR/requirements.txt"
+curl -sS "$BASE_URL/app/requirements.txt" -o "$INSTALL_DIR/requirements.txt"
 echo "🔧 Installing dependencies from requirements.txt..."
 pip3 install -r "$INSTALL_DIR/requirements.txt" > /dev/null 2>&1
 
@@ -46,10 +54,12 @@ if [ -d "$WORKFLOW_PATH" ]; then
 fi
 
 # Create workflow directory structure
-mkdir -p "$WORKFLOW_PATH/Contents"
+mkdir -p "$WORKFLOW_PATH/Contents/QuickLook"
 
-# Download the workflow file
-echo "⬇️  Downloading workflow file..."
-curl -sS "$BASE_URL/workflow.plist" -o "$WORKFLOW_PATH/Contents/document.wflow"
+# Download workflow files
+echo "⬇️  Downloading workflow files..."
+curl -sS "$BASE_URL/app/TurboClone/Contents/document.wflow" -o "$WORKFLOW_PATH/Contents/document.wflow"
+curl -sS "$BASE_URL/app/TurboClone/Contents/Info.plist" -o "$WORKFLOW_PATH/Contents/Info.plist"
+curl -sS "$BASE_URL/app/TurboClone/Contents/QuickLook/Thumbnail.png" -o "$WORKFLOW_PATH/Contents/QuickLook/Thumbnail.png"
 
 echo "✅ Installation complete! You can now right-click on a folder, desktop or in an open folder area and select '$SERVICE_NAME' to use TurboClone."
