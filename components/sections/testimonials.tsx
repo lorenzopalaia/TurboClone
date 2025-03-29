@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Mark Reynolds",
     handle: "@markdev",
-    avatar: "/assets/mark.jpg",
+    avatar: "/assets/mark.webp",
     content:
       "TurboClone has completely transformed my workflow! Right-click, clone, done. I can't believe how much time I've saved on my MacOS setup.",
     url: "https://twitter.com/markdev",
@@ -13,7 +13,7 @@ const testimonials = [
   {
     name: "Sophia Chen",
     handle: "@sophiacodes",
-    avatar: "/assets/sophia.jpg",
+    avatar: "/assets/sophia.webp",
     content:
       "The clipboard detection in TurboClone is magic. I copy a GitHub URL, right-click, and boom—repository cloned. No more command line juggling for simple tasks.",
     url: "https://twitter.com/sophiacodes",
@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: "James Wilson",
     handle: "@jwilson_dev",
-    avatar: "/assets/james.jpg",
+    avatar: "/assets/james.webp",
     content:
       "Finally, a GitHub tool that understands what Mac developers actually need. TurboClone is the epitome of Apple's 'it just works' philosophy.",
     url: "https://twitter.com/jwilson_dev",
@@ -29,7 +29,7 @@ const testimonials = [
   {
     name: "Emma Rodriguez",
     handle: "@emmacodes",
-    avatar: "/assets/emma.jpg",
+    avatar: "/assets/emma.webp",
     content:
       "The attention to detail in TurboClone is impressive. The way it integrates with Finder feels native to MacOS. Perfect for my daily development work.",
     url: "https://twitter.com/emmacodes",
@@ -37,7 +37,7 @@ const testimonials = [
   {
     name: "Alex Thompson",
     handle: "@alexdevops",
-    avatar: "/assets/alex.jpg",
+    avatar: "/assets/alex.webp",
     content:
       "Been using @turboclone for my projects and I'm blown away by how seamless it makes repository management. Right-click cloning should have been a thing years ago!",
     url: "https://twitter.com/alexdevops",
@@ -45,7 +45,7 @@ const testimonials = [
   {
     name: "Esme Davis",
     handle: "@esmedavis",
-    avatar: "/assets/esme.jpg",
+    avatar: "/assets/esme.webp",
     content:
       "TurboClone has eliminated all the friction in my GitHub workflow. The clipboard detection feature is genius - I literally copy a URL and it's ready to clone. Pure MacOS elegance.",
     url: "https://twitter.com/priyatech",
@@ -83,6 +83,8 @@ export default function Testimonials() {
                         <AvatarImage
                           src={testimonial.avatar}
                           alt={testimonial.name}
+                          width={48}
+                          height={48}
                         />
                         <AvatarFallback>
                           {testimonial.name
@@ -126,6 +128,8 @@ export default function Testimonials() {
                         <AvatarImage
                           src={testimonial.avatar}
                           alt={testimonial.name}
+                          width={48}
+                          height={48}
                         />
                         <AvatarFallback>
                           {testimonial.name
