@@ -4,5 +4,4 @@ Future improvements:
 3. Add a checkbox to choose if the user wants to run "code <repo_name>" after cloning to open the repository in VSCode
 4. Correctly setup service icon
 5. Split BASE_URL between dev and prod
-6. Demo video on hero section
-7. Add support to GitLab, Bitbucker, ...
+6. Keyboard shortcut
