@@ -2,25 +2,37 @@
 
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { BadgeCheck, Clipboard, Github, MousePointerClick } from "lucide-react";
+import {
+  BadgeCheck,
+  Clipboard,
+  Github,
+  MousePointerClick,
+  Trash2,
+} from "lucide-react";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { ItemIcon } from "../ui/item";
 
 export default function Installation() {
   const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(
-      "curl -sS https://turboclone.lorenzopalaia.com/install.sh | sh",
-    );
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const [copiedUninstall, setCopiedUninstall] = useState(false);
 
   const BASE_URL = "https://turboclone.lorenzopalaia.com";
 
   const installCommand = `curl -sS ${BASE_URL}/install.sh | sh`;
+  const uninstallCommand = `curl -sS ${BASE_URL}/uninstall.sh | sh`;
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(installCommand);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleCopyUninstall = () => {
+    navigator.clipboard.writeText(uninstallCommand);
+    setCopiedUninstall(true);
+    setTimeout(() => setCopiedUninstall(false), 2000);
+  };
 
   return (
     <Section
@@ -137,6 +149,43 @@ export default function Installation() {
                 </ItemIcon>
               </div>
             </div>
+          </div>
+
+          {/* Uninstallation */}
+          <div className="glass-3 flex flex-col gap-6 rounded-lg border border-red-500/20 p-6">
+            <div className="flex items-center gap-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/10">
+                <Trash2 className="h-5 w-5 stroke-[1.5] text-red-500" />
+              </div>
+              <h3 className="text-xl font-semibold">Uninstall TurboClone</h3>
+            </div>
+
+            <p className="text-muted-foreground">
+              If you need to uninstall TurboClone, run this command in Terminal:
+            </p>
+
+            <div className="group relative">
+              <div className="bg-muted flex items-center rounded-lg p-4 font-mono text-sm">
+                <code className="pr-8 break-all">{uninstallCommand}</code>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer opacity-0 transition-opacity group-hover:opacity-100"
+                  onClick={handleCopyUninstall}
+                >
+                  {copiedUninstall ? (
+                    <BadgeCheck className="h-4 w-4" />
+                  ) : (
+                    <Clipboard className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground text-sm">
+              This will safely remove all TurboClone components from your
+              system, including the Finder service and installed scripts.
+            </p>
           </div>
         </div>
 
