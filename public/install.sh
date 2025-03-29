@@ -11,8 +11,7 @@ WORKFLOW_PATH="$AUTOMATOR_DIR/$SERVICE_NAME.workflow"
 # Check if running in Vercel environment
 if [ "$VERCEL_ENV" = "production" ]; then
   # Using BASE_URL from environment
-  BASE_URL="$BASE_URL"
-  echo "🌎 Production mode: using $BASE_URL"
+  BASE_URL="https://turboclone.lorenzopalaia.com"
 else
   # For development, default to localhost if BASE_URL not set
   BASE_URL="http://localhost:3000"
