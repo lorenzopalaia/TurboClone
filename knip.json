@@ -1,5 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
+  "project": ["app/**", "components/**", "lib/**", "public/**"],
   "ignoreDependencies": [
     "eslint",
     "eslint-config-next",
@@ -7,6 +8,6 @@
     "postcss-load-config",
     "tailwindcss"
   ],
-  "ignoreBinaries": ["npm-check-updates"],
+  "ignoreBinaries": ["npm-check-updates", "next-sitemap"],
   "ignoreExportsUsedInFile": true
 }

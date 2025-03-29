@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Section } from "@/components/ui/section";
 
@@ -75,9 +74,8 @@ export default function Testimonials() {
                 className="animate-marquee flex shrink-0 flex-row justify-around [gap:var(--gap)] group-hover:[animation-play-state:paused]"
               >
                 {testimonials.map((testimonial, index) => (
-                  <Link
+                  <div
                     key={index}
-                    href={testimonial.url}
                     className="glass-3 hover:from-card/30 hover:to-card/20 flex max-w-[320px] flex-col rounded-lg p-4 text-start shadow-md sm:max-w-[420px] sm:p-6"
                   >
                     <div className="flex items-center gap-3">
@@ -105,7 +103,7 @@ export default function Testimonials() {
                     <p className="sm:text-md text-muted-foreground mt-4 text-sm">
                       {testimonial.content}
                     </p>
-                  </Link>
+                  </div>
                 ))}
               </div>
             ))}
@@ -119,9 +117,8 @@ export default function Testimonials() {
                 className="animate-marquee flex shrink-0 flex-row justify-around [gap:var(--gap)] [animation-direction:reverse] group-hover:[animation-play-state:paused]"
               >
                 {testimonials.map((testimonial, index) => (
-                  <Link
+                  <div
                     key={index}
-                    href={testimonial.url}
                     className="glass-3 hover:from-card/30 hover:to-card/20 flex max-w-[320px] flex-col rounded-lg p-4 text-start shadow-md sm:max-w-[420px] sm:p-6"
                   >
                     <div className="flex items-center gap-3">
@@ -149,7 +146,7 @@ export default function Testimonials() {
                     <p className="sm:text-md text-muted-foreground mt-4 text-sm">
                       {testimonial.content}
                     </p>
-                  </Link>
+                  </div>
                 ))}
               </div>
             ))}

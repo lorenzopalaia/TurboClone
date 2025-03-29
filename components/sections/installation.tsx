@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,9 +10,8 @@ import {
   MousePointerClick,
   Trash2,
 } from "lucide-react";
-import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { ItemIcon } from "../ui/item";
+import { ItemIcon } from "@/components/ui/item";
 
 export default function Installation() {
   const [copied, setCopied] = useState(false);

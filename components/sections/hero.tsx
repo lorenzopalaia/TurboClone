@@ -1,10 +1,10 @@
-import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Section } from "@/components/ui/section";
+import { Mockup, MockupFrame } from "@/components/ui/mockup";
+import Glow from "@/components/ui/glow";
+import Github from "@/components/logos/github";
 import { ArrowRightIcon } from "lucide-react";
-import { Section } from "../ui/section";
-import { Mockup, MockupFrame } from "../ui/mockup";
-import Glow from "../ui/glow";
-import Github from "../logos/github";
 
 import Link from "next/link";
 
@@ -15,9 +15,9 @@ export default function Hero() {
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
           <Badge variant="outline" className="animate-appear">
             <span className="text-muted-foreground">
-              New version of Launch UI is out!
+              Try TurboClone for free
             </span>
-            <Link href="/" className="flex items-center gap-1">
+            <Link href="#installation" className="flex items-center gap-1">
               Get started
               <ArrowRightIcon className="h-3 w-3" />
             </Link>
@@ -35,8 +35,11 @@ export default function Hero() {
                 <Link href="#installation">Get Started</Link>
               </Button>
               <Button variant="glow" size="lg" asChild>
-                <Link href="https://github.com/lorenzopalaia/TurboClone">
-                  <Github className="mr-2 h-4 w-4" /> Github
+                <Link
+                  href="https://github.com/lorenzopalaia/TurboClone"
+                  target="_blank"
+                >
+                  <Github className="mr-2 h-4 w-4" /> GitHub
                 </Link>
               </Button>
             </div>

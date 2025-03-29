@@ -1,11 +1,11 @@
-import { ModeToggle } from "../ui/mode-toggle";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 import {
   Footer,
   FooterColumn,
   FooterBottom,
   FooterContent,
-} from "../ui/footer";
-import TurboClone from "../logos/turboclone";
+} from "@/components/ui/footer";
+import TurboClone from "@/components/logos/turboclone";
 import Link from "next/link";
 
 export default function FooterSection() {
@@ -24,18 +24,21 @@ export default function FooterSection() {
               <h3 className="text-md pt-1 font-semibold">Contact</h3>
               <Link
                 href="https://github.com/lorenzopalaia/"
+                target="_blank"
                 className="text-muted-foreground text-sm"
               >
                 GitHub
               </Link>
               <Link
                 href="https://linkedin.com/in/lorenzopalaia/"
+                target="_blank"
                 className="text-muted-foreground text-sm"
               >
                 LinkedIn
               </Link>
               <Link
                 href="https://github.com/lorenzopalaia/TurboClone"
+                target="_blank"
                 className="text-muted-foreground text-sm"
               >
                 Repository

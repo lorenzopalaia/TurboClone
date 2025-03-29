@@ -1,6 +1,11 @@
+import {
+  Item,
+  ItemIcon,
+  ItemTitle,
+  ItemDescription,
+} from "@/components/ui/item";
+import { Section } from "@/components/ui/section";
 import { GitForkIcon, ClipboardCopyIcon, ComputerIcon } from "lucide-react";
-import { Item, ItemIcon, ItemTitle, ItemDescription } from "../ui/item";
-import { Section } from "../ui/section";
 
 export default function Features() {
   return (
