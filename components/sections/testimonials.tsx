@@ -1,6 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Section } from "@/components/ui/section";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import Script from "next/script";
 
@@ -11,7 +10,6 @@ const testimonials = [
     avatar: "/assets/mark.webp",
     content:
       "TurboClone has completely transformed my workflow! Right-click, clone, done. I can't believe how much time I've saved on my MacOS setup.",
-    url: "https://twitter.com/markdev",
     role: "Senior Developer",
     date: "2025-01-15",
   },
@@ -21,7 +19,6 @@ const testimonials = [
     avatar: "/assets/sophia.webp",
     content:
       "The clipboard detection in TurboClone is magic. I copy a GitHub URL, right-click, and boom—repository cloned. No more command line juggling for simple tasks.",
-    url: "https://twitter.com/sophiacodes",
     role: "Full Stack Engineer",
     date: "2025-01-23",
   },
@@ -31,7 +28,6 @@ const testimonials = [
     avatar: "/assets/james.webp",
     content:
       "Finally, a GitHub tool that understands what Mac developers actually need. TurboClone is the epitome of Apple's 'it just works' philosophy.",
-    url: "https://twitter.com/jwilson_dev",
     role: "iOS Developer",
     date: "2025-02-04",
   },
@@ -41,7 +37,6 @@ const testimonials = [
     avatar: "/assets/emma.webp",
     content:
       "The attention to detail in TurboClone is impressive. The way it integrates with Finder feels native to MacOS. Perfect for my daily development work.",
-    url: "https://twitter.com/emmacodes",
     role: "Frontend Developer",
     date: "2025-02-18",
   },
@@ -51,7 +46,6 @@ const testimonials = [
     avatar: "/assets/alex.webp",
     content:
       "Been using @turboclone for my projects and I'm blown away by how seamless it makes repository management. Right-click cloning should have been a thing years ago!",
-    url: "https://twitter.com/alexdevops",
     role: "DevOps Engineer",
     date: "2025-03-05",
   },
@@ -61,7 +55,6 @@ const testimonials = [
     avatar: "/assets/esme.webp",
     content:
       "TurboClone has eliminated all the friction in my GitHub workflow. The clipboard detection feature is genius - I literally copy a URL and it's ready to clone. Pure MacOS elegance.",
-    url: "https://twitter.com/priyatech",
     role: "Software Architect",
     date: "2025-03-12",
   },
@@ -173,16 +166,13 @@ export default function Testimonials() {
                           className="text-muted-foreground text-sm"
                           itemProp="author"
                         >
-                          <Link
-                            href={testimonial.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <div
                             className="hover:text-foreground transition-colors"
                             aria-label={`${testimonial.name}'s Twitter profile`}
                             title={`Visit ${testimonial.name} on Twitter`}
                           >
                             {testimonial.handle}
-                          </Link>
+                          </div>
                         </p>
                         <meta
                           itemProp="datePublished"
@@ -251,16 +241,13 @@ export default function Testimonials() {
                           {testimonial.name}
                         </h3>
                         <p className="text-muted-foreground text-sm">
-                          <Link
-                            href={testimonial.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <div
                             className="hover:text-foreground transition-colors"
                             aria-label={`${testimonial.name}'s Twitter profile`}
                             title={`Visit ${testimonial.name} on Twitter`}
                           >
                             {testimonial.handle}
-                          </Link>
+                          </div>
                         </p>
                         <meta
                           itemProp="datePublished"

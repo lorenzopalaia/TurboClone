@@ -95,7 +95,7 @@ export default function FooterSection() {
                   </li>
                   <li>
                     <Link
-                      href="https://linkedin.com/in/lorenzopalaia/"
+                      href="https://www.linkedin.com/in/lorenzopalaia/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-foreground flex items-center gap-2 text-sm transition-colors"
