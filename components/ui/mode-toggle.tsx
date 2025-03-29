@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { Moon, Sun, ChevronsUpDownIcon } from "lucide-react";
 
 import { Button } from "./button";
 import {
@@ -12,29 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./dropdown-menu";
-
-const ThemeOptions = ({ setTheme }: { setTheme: (theme: string) => void }) => (
-  <DropdownMenuContent align="end">
-    <DropdownMenuItem
-      className="cursor-pointer"
-      onClick={() => setTheme("light")}
-    >
-      Light
-    </DropdownMenuItem>
-    <DropdownMenuItem
-      className="cursor-pointer"
-      onClick={() => setTheme("dark")}
-    >
-      Dark
-    </DropdownMenuItem>
-    <DropdownMenuItem
-      className="cursor-pointer"
-      onClick={() => setTheme("system")}
-    >
-      System
-    </DropdownMenuItem>
-  </DropdownMenuContent>
-);
+import { ChevronsUpDownIcon } from "lucide-react";
 
 export function ModeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -60,26 +37,26 @@ export function ModeToggle() {
           <ChevronsUpDownIcon className="h-3 w-3" />
         </Button>
       </DropdownMenuTrigger>
-      <ThemeOptions setTheme={setTheme} />
-    </DropdownMenu>
-  );
-}
-
-export function ModeToggleButton() {
-  const { resolvedTheme: theme, setTheme } = useTheme();
-
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="cursor-pointer">
-          {theme === "dark" ? (
-            <Moon className="h-[1.2rem] w-[1.2rem]" />
-          ) : (
-            <Sun className="h-[1.2rem] w-[1.2rem]" />
-          )}
-        </Button>
-      </DropdownMenuTrigger>
-      <ThemeOptions setTheme={setTheme} />
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={() => setTheme("light")}
+        >
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={() => setTheme("dark")}
+        >
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={() => setTheme("system")}
+        >
+          System
+        </DropdownMenuItem>
+      </DropdownMenuContent>
     </DropdownMenu>
   );
 }

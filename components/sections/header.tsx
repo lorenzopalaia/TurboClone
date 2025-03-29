@@ -4,7 +4,6 @@ import {
   NavbarLeft,
   NavbarRight,
 } from "@/components/ui/navbar";
-import { ModeToggleButton } from "@/components/ui/mode-toggle";
 import TurboClone from "@/components/logos/turboclone";
 import Link from "next/link";
 
@@ -24,7 +23,6 @@ export default function Header() {
             </Link>
           </NavbarLeft>
           <NavbarRight>
-            <ModeToggleButton />
             <Button variant="default" asChild>
               <Link href="#installation">Get Started</Link>
             </Button>

@@ -30,19 +30,17 @@ export default function Hero() {
             repository. It&apos;s that easy and fast.
           </p>
           <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300">
-            <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300">
-              <Button variant="default" size="lg" asChild>
-                <Link href="#installation">Get Started</Link>
-              </Button>
-              <Button variant="glow" size="lg" asChild>
-                <Link
-                  href="https://github.com/lorenzopalaia/TurboClone"
-                  target="_blank"
-                >
-                  <Github className="mr-2 h-4 w-4" /> GitHub
-                </Link>
-              </Button>
-            </div>
+            <Button variant="default" size="lg" asChild>
+              <Link href="#installation">Get Started</Link>
+            </Button>
+            <Button variant="glow" size="lg" asChild>
+              <Link
+                href="https://github.com/lorenzopalaia/TurboClone"
+                target="_blank"
+              >
+                <Github className="mr-2 h-4 w-4" /> GitHub
+              </Link>
+            </Button>
           </div>
           <div className="relative hidden pt-12 sm:block">
             <MockupFrame
@@ -50,7 +48,15 @@ export default function Hero() {
               size="small"
             >
               <Mockup type="responsive">
-                <video autoPlay loop muted width={1248} height={765}>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  width={1248}
+                  height={765}
+                  preload="metadata"
+                >
                   <source src="/assets/demo.mp4" type="video/mp4" />
                 </video>
               </Mockup>
