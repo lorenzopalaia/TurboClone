@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function CTA() {
   return (
     <Section className="w-full overflow-hidden pt-0 md:pt-0">
-      <div className="relative mx-auto flex max-w-container flex-col items-center gap-6 px-8 py-12 text-center sm:gap-8 md:py-24">
+      <div className="max-w-container relative mx-auto flex flex-col items-center gap-6 px-8 py-12 text-center sm:gap-8 md:py-24">
         <Badge variant="outline">
           <span className="text-muted-foreground">Get started</span>
         </Badge>

@@ -1,27 +1,27 @@
-import { EclipseIcon, MonitorSmartphoneIcon, ScanFaceIcon } from "lucide-react";
+import { GitForkIcon, ClipboardCopyIcon, AppleIcon } from "lucide-react";
 import { Item, ItemIcon, ItemTitle, ItemDescription } from "../ui/item";
 import { Section } from "../ui/section";
 
 export default function Items() {
   return (
     <Section>
-      <div className="mx-auto flex max-w-container flex-col items-center gap-6 sm:gap-20">
-        <h2 className="max-w-[560px] text-center text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
+      <div className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-20">
+        <h2 className="max-w-[560px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
           Streamlined GitHub Cloning for Mac
         </h2>
         <div className="grid auto-rows-fr grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-4 md:grid-cols-3">
           <Item>
-            <div className="flex gap-4 p-4 text-foreground flex-row items-center">
-              <div className="flex items-center glass-4 self-center rounded-lg p-4 hover:from-primary/15">
+            <div className="text-foreground flex flex-row items-center gap-4 p-4">
+              <div className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4">
                 <ItemIcon>
-                  <ScanFaceIcon className="h-8 w-8 stroke-1 text-brand" />
+                  <GitForkIcon className="text-brand h-8 w-8 stroke-1" />
                 </ItemIcon>
               </div>
               <div className="flex flex-col gap-2">
-                <ItemTitle className="text-sm font-semibold leading-none tracking-tight sm:text-base">
+                <ItemTitle className="text-sm leading-none font-semibold tracking-tight sm:text-base">
                   One-Click Cloning
                 </ItemTitle>
-                <ItemDescription className="flex max-w-[240px] flex-col gap-2 text-balance text-sm text-muted-foreground">
+                <ItemDescription className="text-muted-foreground flex max-w-[240px] flex-col gap-2 text-sm text-balance">
                   Right-click any folder in Finder and clone GitHub repositories
                   instantly. No terminal commands needed, just pure MacOS
                   simplicity.
@@ -31,17 +31,17 @@ export default function Items() {
           </Item>
 
           <Item>
-            <div className="flex gap-4 p-4 text-foreground flex-row items-center">
-              <div className="flex items-center glass-4 self-center rounded-lg p-4 hover:from-primary/15">
+            <div className="text-foreground flex flex-row items-center gap-4 p-4">
+              <div className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4">
                 <ItemIcon>
-                  <MonitorSmartphoneIcon className="h-8 w-8 stroke-1 text-brand" />
+                  <ClipboardCopyIcon className="text-brand h-8 w-8 stroke-1" />
                 </ItemIcon>
               </div>
               <div className="flex flex-col gap-2">
-                <ItemTitle className="text-sm font-semibold leading-none tracking-tight sm:text-base">
+                <ItemTitle className="text-sm leading-none font-semibold tracking-tight sm:text-base">
                   Smart Clipboard Detection
                 </ItemTitle>
-                <ItemDescription className="flex max-w-[240px] flex-col gap-2 text-balance text-sm text-muted-foreground">
+                <ItemDescription className="text-muted-foreground flex max-w-[240px] flex-col gap-2 text-sm text-balance">
                   Copy a GitHub URL and TurboClone automatically detects it.
                   Just right-click where you want it, and the repo is already
                   set to clone.
@@ -51,17 +51,17 @@ export default function Items() {
           </Item>
 
           <Item>
-            <div className="flex gap-4 p-4 text-foreground flex-row items-center">
-              <div className="flex items-center glass-4 self-center rounded-lg p-4 hover:from-primary/15">
+            <div className="text-foreground flex flex-row items-center gap-4 p-4">
+              <div className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4">
                 <ItemIcon>
-                  <EclipseIcon className="h-8 w-8 stroke-1 text-brand" />
+                  <AppleIcon className="text-brand h-8 w-8 stroke-1" />
                 </ItemIcon>
               </div>
               <div className="flex flex-col gap-2">
-                <ItemTitle className="text-sm font-semibold leading-none tracking-tight sm:text-base">
+                <ItemTitle className="text-sm leading-none font-semibold tracking-tight sm:text-base">
                   Native MacOS Experience
                 </ItemTitle>
-                <ItemDescription className="flex max-w-[240px] flex-col gap-2 text-balance text-sm text-muted-foreground">
+                <ItemDescription className="text-muted-foreground flex max-w-[240px] flex-col gap-2 text-sm text-balance">
                   Designed exclusively for Mac, TurboClone integrates perfectly
                   with your workflow. Install once and enjoy seamless GitHub
                   integration.

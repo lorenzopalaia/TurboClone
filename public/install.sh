@@ -10,9 +10,11 @@ WORKFLOW_PATH="$AUTOMATOR_DIR/$SERVICE_NAME.workflow"
 
 # Check if running in Vercel environment
 if [ "$VERCEL_ENV" = "production" ]; then
-  BASE_URL="https://turboclone.lorenzopalaia.com"
+  # Using BASE_URL from environment
+  BASE_URL="$BASE_URL"
   echo "🌎 Production mode: using $BASE_URL"
 else
+  # For development, default to localhost if BASE_URL not set
   BASE_URL="http://localhost:3000"
   echo "🧪 Development mode: using $BASE_URL"
 fi
@@ -44,6 +46,7 @@ echo "⬇️  Downloading requirements.txt..."
 curl -sS "$BASE_URL/app/requirements.txt" -o "$INSTALL_DIR/requirements.txt"
 echo "🔧 Installing dependencies from requirements.txt..."
 pip3 install -r "$INSTALL_DIR/requirements.txt" > /dev/null 2>&1
+rm -f "$INSTALL_DIR/requirements.txt"
 
 # Create Automator service
 echo "⚙️  Setting up macOS context menu service..."

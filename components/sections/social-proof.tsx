@@ -94,30 +94,30 @@ const testimonials2 = [
 
 export default function SocialProof() {
   return (
-    <Section className="bg-background py-12 text-foreground sm:py-24 md:py-32 w-full overflow-hidden px-0">
-      <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
+    <Section className="bg-background text-foreground w-full overflow-hidden px-0 py-12 sm:py-24 md:py-32">
+      <div className="max-w-container mx-auto flex flex-col items-center gap-4 text-center sm:gap-16">
         <div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
-          <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
+          <h2 className="max-w-[720px] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
             Loved by developers across the Mac ecosystem
           </h2>
-          <p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">
+          <p className="text-md text-muted-foreground max-w-[600px] font-medium sm:text-xl">
             Here&apos;s what people are saying about TurboClone
           </p>
         </div>
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
           {/* Prima riga - scorre da sinistra a destra */}
-          <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:20s]">
+          <div className="group flex flex-row [gap:var(--gap)] overflow-hidden p-2 [--duration:20s] [--gap:1rem]">
             {Array.from({ length: 2 }).map((_, i) => (
               <div
                 key={i}
-                className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]"
+                className="animate-marquee flex shrink-0 flex-row justify-around [gap:var(--gap)] group-hover:[animation-play-state:paused]"
               >
                 {testimonials.map((testimonial, index) => (
                   <Link
                     key={index}
                     href={testimonial.url}
-                    className="flex max-w-[320px] flex-col rounded-lg glass-3 p-4 text-start shadow-md sm:max-w-[420px] sm:p-6 hover:from-card/30 hover:to-card/20"
+                    className="glass-3 hover:from-card/30 hover:to-card/20 flex max-w-[320px] flex-col rounded-lg p-4 text-start shadow-md sm:max-w-[420px] sm:p-6"
                   >
                     <div className="flex items-center gap-3">
                       <Avatar className="h-12 w-12">
@@ -133,15 +133,15 @@ export default function SocialProof() {
                         </AvatarFallback>
                       </Avatar>
                       <div className="flex flex-col items-start">
-                        <h3 className="text-md font-semibold leading-none">
+                        <h3 className="text-md leading-none font-semibold">
                           {testimonial.name}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-muted-foreground text-sm">
                           {testimonial.handle}
                         </p>
                       </div>
                     </div>
-                    <p className="sm:text-md mt-4 text-sm text-muted-foreground">
+                    <p className="sm:text-md text-muted-foreground mt-4 text-sm">
                       {testimonial.content}
                     </p>
                   </Link>
@@ -151,17 +151,17 @@ export default function SocialProof() {
           </div>
 
           {/* Seconda riga - scorre da destra a sinistra */}
-          <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:20s]">
+          <div className="group flex flex-row [gap:var(--gap)] overflow-hidden p-2 [--duration:20s] [--gap:1rem]">
             {Array.from({ length: 2 }).map((_, i) => (
               <div
                 key={i}
-                className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused] [animation-direction:reverse]"
+                className="animate-marquee flex shrink-0 flex-row justify-around [gap:var(--gap)] [animation-direction:reverse] group-hover:[animation-play-state:paused]"
               >
                 {testimonials2.map((testimonial, index) => (
                   <Link
                     key={index}
                     href={testimonial.url}
-                    className="flex max-w-[320px] flex-col rounded-lg glass-3 p-4 text-start shadow-md sm:max-w-[420px] sm:p-6 hover:from-card/30 hover:to-card/20"
+                    className="glass-3 hover:from-card/30 hover:to-card/20 flex max-w-[320px] flex-col rounded-lg p-4 text-start shadow-md sm:max-w-[420px] sm:p-6"
                   >
                     <div className="flex items-center gap-3">
                       <Avatar className="h-12 w-12">
@@ -177,15 +177,15 @@ export default function SocialProof() {
                         </AvatarFallback>
                       </Avatar>
                       <div className="flex flex-col items-start">
-                        <h3 className="text-md font-semibold leading-none">
+                        <h3 className="text-md leading-none font-semibold">
                           {testimonial.name}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-muted-foreground text-sm">
                           {testimonial.handle}
                         </p>
                       </div>
                     </div>
-                    <p className="sm:text-md mt-4 text-sm text-muted-foreground">
+                    <p className="sm:text-md text-muted-foreground mt-4 text-sm">
                       {testimonial.content}
                     </p>
                   </Link>
@@ -195,8 +195,8 @@ export default function SocialProof() {
           </div>
 
           {/* Gradienti laterali */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-linear-to-r from-background sm:block" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-linear-to-l from-background sm:block" />
+          <div className="from-background pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-linear-to-r sm:block" />
+          <div className="from-background pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-linear-to-l sm:block" />
         </div>
       </div>
     </Section>

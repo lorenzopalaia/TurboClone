@@ -11,7 +11,7 @@ export default function Installation() {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(
-      "curl -sS https://turboclone.lorenzopalaia.com/install.sh | sh"
+      "curl -sS https://turboclone.lorenzopalaia.com/install.sh | sh",
     );
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -19,7 +19,7 @@ export default function Installation() {
 
   const BASE_URL =
     process.env.VERCEL_ENV === "production"
-      ? "https://turboclone.lorenzopalaia.com"
+      ? process.env.BASE_URL
       : "http://localhost:3000";
 
   const installCommand = `curl -sS ${BASE_URL}/install.sh | sh`;
@@ -27,25 +27,31 @@ export default function Installation() {
   return (
     <Section
       id="installation"
-      className="bg-background py-12 text-foreground sm:py-24 w-full overflow-hidden"
+      className="bg-background text-foreground w-full overflow-hidden py-12 sm:py-24"
     >
-      <div className="mx-auto flex max-w-container flex-col items-center gap-8 px-4">
+      <div className="max-w-container mx-auto flex flex-col items-center gap-8 px-4">
         <Badge variant="outline">
           <span className="text-muted-foreground">Installation</span>
         </Badge>
 
-        <h2 className="max-w-[720px] text-center text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
+        <h2 className="max-w-[720px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
           Setup in seconds, save hours
         </h2>
-        <p className="text-md max-w-[600px] text-center font-medium text-muted-foreground sm:text-xl">
+        <p className="text-md text-muted-foreground max-w-[600px] text-center font-medium sm:text-xl">
           Three simple steps to revolutionize your GitHub workflow on Mac
         </p>
 
-        <div className="grid gap-8 w-full max-w-[800px] mt-6">
+        <div className="text-muted-foreground mt-2 mb-6 max-w-[600px] text-center text-sm">
+          <strong>Note:</strong> TurboClone requires Python to be installed on
+          your system. While Git will be installed automatically using Homebrew
+          if needed, Python must be installed separately.
+        </div>
+
+        <div className="grid w-full max-w-[800px] gap-8">
           {/* Step 1 */}
-          <div className="flex flex-col gap-6 glass-3 p-6 rounded-lg">
+          <div className="glass-3 flex flex-col gap-6 rounded-lg p-6">
             <div className="flex items-center gap-4">
-              <div className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center">
+              <div className="bg-brand/10 flex h-10 w-10 items-center justify-center rounded-full">
                 <span className="text-brand font-semibold">1</span>
               </div>
               <h3 className="text-xl font-semibold">Install TurboClone</h3>
@@ -56,12 +62,12 @@ export default function Installation() {
             </p>
 
             <div className="relative">
-              <div className="bg-muted rounded-lg p-4 font-mono text-sm overflow-x-auto flex items-center">
+              <div className="bg-muted flex items-center overflow-x-auto rounded-lg p-4 font-mono text-sm">
                 <code>{installCommand}</code>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="ml-auto shrink-0"
+                  className="ml-auto shrink-0 cursor-pointer"
                   onClick={handleCopy}
                 >
                   {copied ? (
@@ -73,16 +79,18 @@ export default function Installation() {
               </div>
             </div>
 
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               This script installs TurboClone and configures the necessary
-              Finder integration.
+              Finder integration. Python must be installed on your system. If
+              Git is not present, the script will attempt to install it via
+              Homebrew if available.
             </p>
           </div>
 
           {/* Step 2 */}
-          <div className="flex flex-col gap-6 glass-3 p-6 rounded-lg">
+          <div className="glass-3 flex flex-col gap-6 rounded-lg p-6">
             <div className="flex items-center gap-4">
-              <div className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center">
+              <div className="bg-brand/10 flex h-10 w-10 items-center justify-center rounded-full">
                 <span className="text-brand font-semibold">2</span>
               </div>
               <h3 className="text-xl font-semibold">
@@ -90,23 +98,23 @@ export default function Installation() {
               </h3>
             </div>
 
-            <div className="flex items-center gap-6 flex-wrap">
-              <div className="flex-1 min-w-[280px]">
+            <div className="flex flex-wrap items-center gap-6">
+              <div className="min-w-[280px] flex-1">
                 <p className="text-muted-foreground">
                   Visit any GitHub repository and copy its URL. TurboClone will
                   automatically detect it from your clipboard.
                 </p>
               </div>
-              <div className="flex items-center justify-center p-4 bg-muted rounded-lg">
-                <Github className="h-12 w-12 text-brand" />
+              <div className="bg-muted flex items-center justify-center rounded-lg p-4">
+                <Github className="text-brand h-12 w-12" />
               </div>
             </div>
           </div>
 
           {/* Step 3 */}
-          <div className="flex flex-col gap-6 glass-3 p-6 rounded-lg">
+          <div className="glass-3 flex flex-col gap-6 rounded-lg p-6">
             <div className="flex items-center gap-4">
-              <div className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center">
+              <div className="bg-brand/10 flex h-10 w-10 items-center justify-center rounded-full">
                 <span className="text-brand font-semibold">3</span>
               </div>
               <h3 className="text-xl font-semibold">
@@ -114,8 +122,8 @@ export default function Installation() {
               </h3>
             </div>
 
-            <div className="flex items-center gap-6 flex-wrap">
-              <div className="flex-1 min-w-[280px]">
+            <div className="flex flex-wrap items-center gap-6">
+              <div className="min-w-[280px] flex-1">
                 <p className="text-muted-foreground">
                   Right-click on any folder in Finder and select TurboClone from
                   the context menu. If you&apos;ve copied a GitHub URL, it will
@@ -123,15 +131,15 @@ export default function Installation() {
                   to enter a repository URL.
                 </p>
               </div>
-              <div className="flex items-center justify-center p-4 bg-muted rounded-lg">
-                <MousePointerClick className="h-12 w-12 text-brand" />
+              <div className="bg-muted flex items-center justify-center rounded-lg p-4">
+                <MousePointerClick className="text-brand h-12 w-12" />
               </div>
             </div>
           </div>
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-muted-foreground mb-6">
+          <p className="text-muted-foreground">
             That&apos;s it! No complex setup, no configuration files, just
             instant GitHub cloning power at your fingertips.
           </p>

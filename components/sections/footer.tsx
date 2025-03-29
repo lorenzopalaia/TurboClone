@@ -10,8 +10,8 @@ import Link from "next/link";
 
 export default function FooterSection() {
   return (
-    <footer className="w-full bg-background px-4">
-      <div className="mx-auto max-w-container">
+    <footer className="bg-background w-full px-4">
+      <div className="max-w-container mx-auto">
         <Footer>
           <FooterContent>
             <FooterColumn className="col-span-2 sm:col-span-3 md:col-span-1">
@@ -24,19 +24,19 @@ export default function FooterSection() {
               <h3 className="text-md pt-1 font-semibold">Contact</h3>
               <Link
                 href="https://github.com/lorenzopalaia/"
-                className="text-sm text-muted-foreground"
+                className="text-muted-foreground text-sm"
               >
                 GitHub
               </Link>
               <Link
                 href="https://linkedin.com/in/lorenzopalaia/"
-                className="text-sm text-muted-foreground"
+                className="text-muted-foreground text-sm"
               >
                 LinkedIn
               </Link>
               <Link
                 href="https://github.com/lorenzopalaia/TurboClone"
-                className="text-sm text-muted-foreground"
+                className="text-muted-foreground text-sm"
               >
                 Repository
               </Link>

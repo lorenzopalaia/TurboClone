@@ -13,3 +13,4 @@ Future improvements:
 1. Add a progress bar to show the cloning progress
 2. Add an option to choose the branch to clone, done by checking the branches in the repository via the API
 3. Add a checkbox to choose if the user wants to run "code <repo_name>" after cloning to open the repository in VSCode
+4. Correctly setup service icon
