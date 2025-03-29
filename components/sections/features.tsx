@@ -2,7 +2,7 @@ import { GitForkIcon, ClipboardCopyIcon, ComputerIcon } from "lucide-react";
 import { Item, ItemIcon, ItemTitle, ItemDescription } from "../ui/item";
 import { Section } from "../ui/section";
 
-export default function Items() {
+export default function Features() {
   return (
     <Section>
       <div className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-20">

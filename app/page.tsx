@@ -1,16 +1,16 @@
 import Hero from "@/components/sections/hero";
 import Installation from "@/components/sections/installation";
-import Items from "@/components/sections/items";
-import SocialProof from "@/components/sections/social-proof";
+import Features from "@/components/sections/features";
+import Testimonials from "@/components/sections/testimonials";
 import CTA from "@/components/sections/cta";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Items />
+      <Features />
       <Installation />
-      <SocialProof />
+      <Testimonials />
       <CTA />
     </>
   );

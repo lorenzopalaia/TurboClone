@@ -6,6 +6,7 @@ const testimonials = [
   {
     name: "Mark Reynolds",
     handle: "@markdev",
+    avatar: "/images/mark.jpg",
     content:
       "TurboClone has completely transformed my workflow! Right-click, clone, done. I can't believe how much time I've saved on my MacOS setup.",
     url: "https://twitter.com/markdev",
@@ -13,6 +14,7 @@ const testimonials = [
   {
     name: "Sophia Chen",
     handle: "@sophiacodes",
+    avatar: "/images/sophia.jpg",
     content:
       "The clipboard detection in TurboClone is magic. I copy a GitHub URL, right-click, and boom—repository cloned. No more command line juggling for simple tasks.",
     url: "https://twitter.com/sophiacodes",
@@ -20,6 +22,7 @@ const testimonials = [
   {
     name: "James Wilson",
     handle: "@jwilson_dev",
+    avatar: "/images/james.jpg",
     content:
       "Finally, a GitHub tool that understands what Mac developers actually need. TurboClone is the epitome of Apple's 'it just works' philosophy.",
     url: "https://twitter.com/jwilson_dev",
@@ -27,6 +30,7 @@ const testimonials = [
   {
     name: "Emma Rodriguez",
     handle: "@emmacodes",
+    avatar: "/images/emma.jpg",
     content:
       "The attention to detail in TurboClone is impressive. The way it integrates with Finder feels native to MacOS. Perfect for my daily development work.",
     url: "https://twitter.com/emmacodes",
@@ -34,65 +38,22 @@ const testimonials = [
   {
     name: "Alex Thompson",
     handle: "@alexdevops",
+    avatar: "/images/alex.jpg",
     content:
       "Been using @turboclone for my projects and I'm blown away by how seamless it makes repository management. Right-click cloning should have been a thing years ago!",
     url: "https://twitter.com/alexdevops",
   },
   {
-    name: "Priya Sharma",
-    handle: "@priyatech",
+    name: "Esme Davis",
+    handle: "@esmedavis",
+    avatar: "/images/esme.jpg",
     content:
       "TurboClone has eliminated all the friction in my GitHub workflow. The clipboard detection feature is genius - I literally copy a URL and it's ready to clone. Pure MacOS elegance.",
     url: "https://twitter.com/priyatech",
   },
 ];
 
-const testimonials2 = [
-  {
-    name: "David Garcia",
-    handle: "@davidg",
-    content:
-      "As someone who works with multiple repos daily, TurboClone has been a lifesaver. The context menu integration on MacOS is brilliant - so intuitive!",
-    url: "https://twitter.com/davidg",
-  },
-  {
-    name: "Leila Khan",
-    handle: "@leilacodes",
-    content:
-      "TurboClone is the perfect example of how developer tools should work. Simple, fast, and it gets out of your way. The clipboard detection feature is pure genius.",
-    url: "https://twitter.com/leilacodes",
-  },
-  {
-    name: "Michael Chen",
-    handle: "@michaelc",
-    content:
-      "I was skeptical at first, but TurboClone has become essential in my MacOS development setup. The right-click to clone feature saves me so much time every day.",
-    url: "https://twitter.com/michaelc",
-  },
-  {
-    name: "Nina Williams",
-    handle: "@ninacodes",
-    content:
-      "TurboClone makes GitHub interactions feel native to MacOS. I love how it just detects repository URLs from my clipboard automatically!",
-    url: "https://twitter.com/ninacodes",
-  },
-  {
-    name: "Omar Hassan",
-    handle: "@omardev",
-    content:
-      "MacOS + GitHub + TurboClone = Perfect workflow. This app is the missing link I didn't know I needed until I tried it.",
-    url: "https://twitter.com/omardev",
-  },
-  {
-    name: "Tara Johnson",
-    handle: "@tarajohnson",
-    content:
-      "TurboClone has simplified my GitHub workflow immensely. The integration with MacOS is flawless, and the clipboard detection feels like magic. Easily worth 10x the price!",
-    url: "https://twitter.com/tarajohnson",
-  },
-];
-
-export default function SocialProof() {
+export default function Testimonials() {
   return (
     <Section className="bg-background text-foreground w-full overflow-hidden px-0 py-12 sm:py-24 md:py-32">
       <div className="max-w-container mx-auto flex flex-col items-center gap-4 text-center sm:gap-16">
@@ -122,7 +83,7 @@ export default function SocialProof() {
                     <div className="flex items-center gap-3">
                       <Avatar className="h-12 w-12">
                         <AvatarImage
-                          src={`https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=${testimonial.handle}`}
+                          src={testimonial.avatar}
                           alt={testimonial.name}
                         />
                         <AvatarFallback>
@@ -157,7 +118,7 @@ export default function SocialProof() {
                 key={i}
                 className="animate-marquee flex shrink-0 flex-row justify-around [gap:var(--gap)] [animation-direction:reverse] group-hover:[animation-play-state:paused]"
               >
-                {testimonials2.map((testimonial, index) => (
+                {testimonials.map((testimonial, index) => (
                   <Link
                     key={index}
                     href={testimonial.url}
@@ -166,7 +127,7 @@ export default function SocialProof() {
                     <div className="flex items-center gap-3">
                       <Avatar className="h-12 w-12">
                         <AvatarImage
-                          src={`https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=${testimonial.handle}`}
+                          src={testimonial.avatar}
                           alt={testimonial.name}
                         />
                         <AvatarFallback>
