@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Information on how TurboClone handles data and respects users' privacy.",
+    "Learn how TurboClone handles your data while cloning GitHub repositories. Our privacy policy outlines our commitment to data security, local-only processing, and transparent practices to ensure your information remains private and secure.",
 };
 
 export default function PrivacyPage() {
