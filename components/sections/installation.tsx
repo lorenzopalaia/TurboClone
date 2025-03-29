@@ -14,7 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { ItemIcon } from "@/components/ui/item";
 
 export default function Installation() {
-  const [copied, setCopied] = useState(false);
+  const [copiedInstall, setCopiedInstall] = useState(false);
   const [copiedUninstall, setCopiedUninstall] = useState(false);
 
   const BASE_URL = "https://turboclone.lorenzopalaia.com";
@@ -24,8 +24,8 @@ export default function Installation() {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(installCommand);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedInstall(true);
+    setTimeout(() => setCopiedInstall(false), 2000);
   };
 
   const handleCopyUninstall = () => {
@@ -77,10 +77,13 @@ export default function Installation() {
                 <Button
                   variant="ghost"
                   size="icon"
+                  aria-label={
+                    copiedInstall ? "Copied" : "Copy installation command"
+                  }
                   className="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer opacity-0 transition-opacity group-hover:opacity-100"
                   onClick={handleCopy}
                 >
-                  {copied ? (
+                  {copiedInstall ? (
                     <BadgeCheck className="h-4 w-4" />
                   ) : (
                     <Clipboard className="h-4 w-4" />
@@ -170,6 +173,9 @@ export default function Installation() {
                 <Button
                   variant="ghost"
                   size="icon"
+                  aria-label={
+                    copiedUninstall ? "Copied" : "Copy uninstallation command"
+                  }
                   className="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer opacity-0 transition-opacity group-hover:opacity-100"
                   onClick={handleCopyUninstall}
                 >
