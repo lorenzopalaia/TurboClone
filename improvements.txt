@@ -5,3 +5,4 @@ Future improvements:
 4. Correctly setup service icon
 5. Split BASE_URL between dev and prod
 6. Demo video on hero section
+7. Add support to GitLab, Bitbucker, ...
