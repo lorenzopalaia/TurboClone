@@ -166,13 +166,13 @@ export default function Testimonials() {
                           className="text-muted-foreground text-sm"
                           itemProp="author"
                         >
-                          <div
+                          <span
                             className="hover:text-foreground transition-colors"
                             aria-label={`${testimonial.name}'s Twitter profile`}
                             title={`Visit ${testimonial.name} on Twitter`}
                           >
                             {testimonial.handle}
-                          </div>
+                          </span>
                         </p>
                         <meta
                           itemProp="datePublished"
@@ -241,13 +241,13 @@ export default function Testimonials() {
                           {testimonial.name}
                         </h3>
                         <p className="text-muted-foreground text-sm">
-                          <div
+                          <span
                             className="hover:text-foreground transition-colors"
                             aria-label={`${testimonial.name}'s Twitter profile`}
                             title={`Visit ${testimonial.name} on Twitter`}
                           >
                             {testimonial.handle}
-                          </div>
+                          </span>
                         </p>
                         <meta
                           itemProp="datePublished"

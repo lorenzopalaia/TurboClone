@@ -69,7 +69,7 @@ export default function Installation() {
             href="https://www.python.org/downloads/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foregorund hover:underline"
+            className="text-foreground hover:underline"
           >
             Python
           </Link>{" "}
