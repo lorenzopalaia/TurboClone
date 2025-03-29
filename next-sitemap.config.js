@@ -6,6 +6,7 @@ module.exports = {
   outDir: "public",
   changefreq: "yearly",
   priority: 1,
+  exclude: ["/terms", "/privacy"],
   robotsTxtOptions: {
     policies: [
       {
