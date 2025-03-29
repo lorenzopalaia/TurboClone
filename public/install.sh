@@ -7,16 +7,7 @@ INSTALL_DIR="$HOME/.turboclone"
 SERVICE_NAME="TurboClone"
 AUTOMATOR_DIR="$HOME/Library/Services"
 WORKFLOW_PATH="$AUTOMATOR_DIR/$SERVICE_NAME.workflow"
-
-# Check if running in Vercel environment
-if [ "$VERCEL_ENV" = "production" ]; then
-  # Using BASE_URL from environment
-  BASE_URL="https://turboclone.lorenzopalaia.com"
-else
-  # For development, default to localhost if BASE_URL not set
-  BASE_URL="http://localhost:3000"
-  echo "🧪 Development mode: using $BASE_URL"
-fi
+BASE_URL="https://turboclone.lorenzopalaia.com"
 
 echo "🚀 Installing TurboClone..."
 

@@ -17,10 +17,7 @@ export default function Installation() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const BASE_URL =
-    process.env.VERCEL_ENV === "production"
-      ? "https://turboclone.lorenzopalaia.com"
-      : "http://localhost:3000";
+  const BASE_URL = "https://turboclone.lorenzopalaia.com";
 
   const installCommand = `curl -sS ${BASE_URL}/install.sh | sh`;
 
