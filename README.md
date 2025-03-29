@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TurboClone
 
-## Getting Started
+TurboClone is an open-source tool for macOS that simplifies cloning GitHub repositories directly from Finder, eliminating the need for terminal commands.
 
-First, run the development server:
+## Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **One-Click Cloning**: Right-click any folder in Finder and select TurboClone to instantly clone a GitHub repository.
+- **Smart Clipboard Detection**: Copy a GitHub repository URL, and TurboClone will automatically detect it, streamlining the cloning process.
+- **Native macOS Integration**: Designed exclusively for Mac, TurboClone integrates seamlessly into your daily workflow.
+
+## Install TurboClone on macOS
+
+**Note**: TurboClone requires Python to be installed on your system. If Git is not present, it will be installed automatically using Homebrew, if available.
+
+1. **Install TurboClone**:
+
+   Open Terminal and run the following command:
+
+   ```sh
+   curl -sS https://turboclone.lorenzopalaia.com/install.sh | sh
+   ```
+
+   This script installs TurboClone and configures the necessary Finder integration. Ensure that Python is already installed on your system.
+
+2. **Copy the GitHub Repository URL**:
+
+   Visit a GitHub repository and copy its URL. TurboClone will automatically detect it from your clipboard.
+
+3. **Clone with a Right-Click**:
+
+   Right-click on any folder in Finder and select "TurboClone" from the context menu. If you've copied a GitHub URL, the cloning will start immediately; otherwise, you'll be prompted to enter a repository URL.
+
+## Uninstallation
+
+To remove TurboClone from your system, run the following command in Terminal:
+
+```sh
+curl -sS https://turboclone.lorenzopalaia.com/uninstall.sh | sh
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This script will safely remove all TurboClone components, including the Finder service and installed scripts.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+We welcome contributions from the community! To contribute:
 
-## Learn More
+1. Fork the repository on GitHub.
+2. Create a new branch for your feature or bug fix:
+   ```sh
+   git checkout -b feature-name
+   ```
+3. Make your changes and commit them:
+   ```sh
+   git commit -m "Add new feature"
+   ```
+4. Push your branch:
+   ```sh
+   git push origin feature-name
+   ```
+5. Open a Pull Request on GitHub.
 
-To learn more about Next.js, take a look at the following resources:
+### Install and Run Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To set up the TurboClone project locally, follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
 
-## Deploy on Vercel
+   ```sh
+   git clone https://github.com/lorenzopalaia/turboclone.git
+   cd turboclone
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```sh
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```sh
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:3000/`.
+
+## License
+
+This project is licensed under the MIT License.
+
+For more information and to download TurboClone, visit the [official website](https://turboclone.lorenzopalaia.com/).
