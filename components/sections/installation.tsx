@@ -69,7 +69,7 @@ export default function Installation() {
             href="https://www.python.org/downloads/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand hover:underline"
+            className="text-foregorund hover:underline"
           >
             Python
           </Link>{" "}
@@ -78,7 +78,7 @@ export default function Installation() {
             href="https://git-scm.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand hover:underline"
+            className="text-foreground hover:underline"
           >
             Git
           </Link>{" "}
@@ -87,10 +87,10 @@ export default function Installation() {
             href="https://brew.sh/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand hover:underline"
+            className="text-foreground hover:underline"
           >
             Homebrew
-          </Link>
+          </Link>{" "}
           if needed, Python must be installed separately.
         </div>
 
@@ -175,7 +175,7 @@ export default function Installation() {
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand hover:underline"
+                    className="text-foreground hover:underline"
                   >
                     GitHub
                   </Link>{" "}
