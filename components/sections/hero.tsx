@@ -1,69 +1,61 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { Section } from "@/components/ui/section";
-import Glow from "@/components/ui/glow";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import { ArrowRightIcon } from "lucide-react";
+import { Section } from "../ui/section";
+import { Mockup, MockupFrame } from "../ui/mockup";
+import Glow from "../ui/glow";
+import Github from "../logos/github";
 
 import Link from "next/link";
 
 export default function Hero() {
   return (
-    <Section className="fade-bottom w-full overflow-hidden pb-0 sm:pb-0 md:pb-0">
-      <div className="max-w-container mx-auto flex flex-col gap-12 sm:gap-24">
-        <div className="flex flex-col items-center gap-6 pt-16 text-center sm:gap-12">
-          <h1 className="animate-appear from-foreground to-foreground dark:to-muted-foreground inline-block bg-linear-to-r bg-clip-text text-4xl leading-tight font-semibold text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight">
+    <Section className="sm:fade-bottom overflow-hidden pb-0 sm:pb-0 md:pb-0">
+      <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24">
+        <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
+          <Badge variant="outline" className="animate-appear">
+            <span className="text-muted-foreground">
+              New version of Launch UI is out!
+            </span>
+            <Link href="/" className="flex items-center gap-1">
+              Get started
+              <ArrowRightIcon className="h-3 w-3" />
+            </Link>
+          </Badge>
+          <h1 className="animate-appear from-foreground to-foreground dark:to-muted-foreground relative z-10 inline-block bg-gradient-to-r bg-clip-text text-4xl leading-tight font-semibold text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight">
             Instantly Clone GitHub Repositories
           </h1>
-
-          <p className="text-md animate-appear text-muted-foreground max-w-[550px] font-medium opacity-0 delay-100 sm:text-xl">
+          <p className="text-md animate-appear text-muted-foreground relative z-10 max-w-[550px] font-medium opacity-0 delay-100 sm:text-xl">
             Right-click any folder, and TurboClone instantly clones your GitHub
             repository. It&apos;s that easy and fast.
           </p>
-
-          <div className="animate-appear relative z-10 flex flex-col items-center justify-center gap-4 self-stretch opacity-0 delay-300">
-            <div className="flex w-full max-w-[420px] justify-center gap-2">
+          <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300">
+            <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300">
               <Button variant="default" size="lg" asChild>
                 <Link href="#installation">Get Started</Link>
               </Button>
+              <Button variant="glow" size="lg" asChild>
+                <Link href="https://github.com/lorenzopalaia/TurboClone">
+                  <Github className="mr-2 h-4 w-4" /> Github
+                </Link>
+              </Button>
             </div>
-            <p className="text-muted-foreground text-xs">
-              Free and open source forever.
-            </p>
           </div>
-
-          <div className="relative w-full pt-12">
-            <div className="relative w-full pt-[20%]">
-              {/* Animated gradient circles */}
-              <div className="border-brand bg-background/50 absolute top-0 -left-[50%] z-10 w-[200%] overflow-hidden rounded-[100%] border-4 pt-[100%] shadow-[0px_0px_12px_hsla(var(--brand)/0.8),_0px_0px_64px_hsla(var(--brand-foreground)/0.5),0px_0px_12px_hsla(var(--brand)/0.8)_inset]">
-                <div
-                  className="animate-pulse-hover bg-brand-foreground/50 absolute top-0 -left-[50%] h-[200%] w-[200%] rounded-[100%]"
-                  style={{
-                    maskImage:
-                      "radial-gradient(140% 95%, transparent 0%, transparent 35%, black 55%)",
-                  }}
-                />
-                <div
-                  className="animate-pulse-hover bg-brand/50 absolute top-0 -left-[50%] h-[200%] w-[200%] rounded-[100%]"
-                  style={{
-                    maskImage:
-                      "radial-gradient(140% 110%, transparent 0%, transparent 35%, black 55%)",
-                  }}
-                />
-                <div
-                  className="animate-pulse-hover bg-brand absolute -top-[5%] -left-[50%] h-[200%] w-[200%] rounded-[100%] dark:bg-white"
-                  style={{
-                    maskImage:
-                      "radial-gradient(140% 120%, transparent 0%, transparent 38%, black 43%)",
-                  }}
-                />
-              </div>
-
-              {/* Glow effects */}
-              <div className="absolute top-[50%] w-full">
-                <Glow className="-translate-y-1/2 bg-[radial-gradient(ellipse_at_center,_hsla(var(--brand-foreground)/.5)_10%,_hsla(var(--brand-foreground)/0)_60%)]" />
-                <Glow className="-translate-y-1/2 bg-[radial-gradient(ellipse_at_center,_hsla(var(--brand)/.3)_10%,_hsla(var(--brand-foreground)/0)_60%)]" />
-              </div>
-            </div>
+          <div className="relative hidden pt-12 sm:block">
+            <MockupFrame
+              className="animate-appear opacity-0 delay-700"
+              size="small"
+            >
+              <Mockup type="responsive">
+                <video autoPlay loop muted width={1248} height={765}>
+                  <source src="/assets/demo.mp4" type="video/mp4" />
+                </video>
+              </Mockup>
+            </MockupFrame>
+            <Glow
+              variant="top"
+              className="animate-appear-zoom opacity-0 delay-1000"
+            />
           </div>
         </div>
       </div>

@@ -5,8 +5,8 @@
     "eslint-config-next",
     "postcss",
     "postcss-load-config",
-    "tailwindcss",
-    "tailwindcss-animate"
+    "tailwindcss"
   ],
+  "ignoreBinaries": ["npm-check-updates"],
   "ignoreExportsUsedInFile": true
 }

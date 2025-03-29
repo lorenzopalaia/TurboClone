@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://turboclone.lorenzopalaia.com
+
+# Sitemaps
+Sitemap: https://turboclone.lorenzopalaia.com/sitemap.xml
