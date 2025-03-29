@@ -137,10 +137,10 @@ export default function Installation() {
             <div className="flex flex-wrap items-center gap-6">
               <div className="min-w-[280px] flex-1">
                 <p className="text-muted-foreground">
-                  Right-click on any folder in Finder and select TurboClone from
-                  the context menu. If you&apos;ve copied a GitHub URL, it will
-                  start cloning immediately. Otherwise, you&apos;ll be prompted
-                  to enter a repository URL.
+                  Right-click on any folder in Finder, select &quot;Quick
+                  Actions&quot; and choose &quot;TurboClone&quot;. If
+                  you&apos;ve copied a GitHub URL, cloning begins instantly.
+                  Otherwise, you&apos;ll be prompted to enter a repository URL.
                 </p>
               </div>
               <div className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4">
