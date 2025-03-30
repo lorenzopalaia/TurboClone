@@ -25,28 +25,6 @@ export default function Header() {
               <span>TurboClone</span>
             </Link>
           </NavbarLeft>
-          <nav aria-label="Navigazione principale">
-            <ul className="flex items-center space-x-6">
-              <li>
-                <Link
-                  href="/#features"
-                  className="text-muted-foreground hover:text-foreground text-sm font-medium"
-                  title="TurboClone Features"
-                >
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#testimonials"
-                  className="text-muted-foreground hover:text-foreground text-sm font-medium"
-                  title="User Testimonials"
-                >
-                  Testimonials
-                </Link>
-              </li>
-            </ul>
-          </nav>
           <NavbarRight>
             <Button variant="default" asChild>
               <Link

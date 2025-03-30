@@ -10,7 +10,8 @@
     "format": "prettier --write . --log-level warn",
     "update": "npx npm-check-updates -u",
     "knip": "knip",
-    "sitemap": "next-sitemap"
+    "sitemap": "next-sitemap",
+    "test": "sh ./public/install.sh && sh ./public/uninstall.sh"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.3",
