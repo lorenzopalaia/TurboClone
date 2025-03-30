@@ -2,28 +2,27 @@
 
 set -e
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 INSTALL_DIR="$HOME/.turboclone"
 SERVICE_NAME="TurboClone"
 AUTOMATOR_DIR="$HOME/Library/Services"
 WORKFLOW_PATH="$AUTOMATOR_DIR/$SERVICE_NAME.workflow"
 
-if [ -n "$VERCEL" ]; then
-  echo "Vercel environment detected. Using BASE_URL from environment variable."
+set -a
+[ -f "$PROJECT_ROOT/.env.local" ] && source "$PROJECT_ROOT/.env.local"
+set +a
+
+# Set BASE_URL based on environment variables
+if [ -n "$NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL" ]; then
+  BASE_URL="https://$NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL"
+elif [ "$NEXT_PUBLIC_VERCEL_ENV" = "production" ]; then
+  BASE_URL="${NEXT_PUBLIC_PRODUCTION_URL:-}"
 else
-  echo "Local environment detected. Using BASE_URL from .env.local file."
-  if [ -f "$PROJECT_ROOT/.env.local" ]; then
-    set -a
-    source "$PROJECT_ROOT/.env.local"
-    set +a
-    BASE_URL="$LOCAL_URL"
-  else
-    echo "⚠️  .env.local file not found. Please create it with the BASE_URL variable."
-    exit 1
-  fi
+  BASE_URL="${NEXT_PUBLIC_LOCALHOST_URL:-}"
 fi
-echo "BASE_URL: $BASE_URL"
+
+echo "🌍 Base URL: $BASE_URL"
 
 echo "🚀 Installing TurboClone..."
 
