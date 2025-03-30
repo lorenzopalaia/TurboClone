@@ -2,54 +2,61 @@
 
 set -e
 
-# Installation directory (hidden in user's home)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 INSTALL_DIR="$HOME/.turboclone"
 SERVICE_NAME="TurboClone"
 AUTOMATOR_DIR="$HOME/Library/Services"
 WORKFLOW_PATH="$AUTOMATOR_DIR/$SERVICE_NAME.workflow"
-BASE_URL="https://turboclone.lorenzopalaia.com"
+
+if [ -n "$VERCEL" ]; then
+  echo "Vercel environment detected. Using BASE_URL from environment variable."
+else
+  echo "Local environment detected. Using BASE_URL from .env.local file."
+  if [ -f "$PROJECT_ROOT/.env.local" ]; then
+    set -a
+    source "$PROJECT_ROOT/.env.local"
+    set +a
+    BASE_URL="$LOCAL_URL"
+  else
+    echo "⚠️  .env.local file not found. Please create it with the BASE_URL variable."
+    exit 1
+  fi
+fi
+echo "BASE_URL: $BASE_URL"
 
 echo "🚀 Installing TurboClone..."
 
-# Check if Homebrew is installed
 if ! command -v brew &> /dev/null; then
-  echo "⚠️  Homebrew not found. Install it before proceeding: https://brew.sh"
+  echo "⚠️  Homebrew non trovato. Installalo prima di procedere: https://brew.sh"
   exit 1
 fi
 
-# Install Git if it's not installed
 if ! command -v git &> /dev/null; then
   echo "🔧 Installing Git..."
   brew install git
 fi
 
-# Create installation directory
 mkdir -p "$INSTALL_DIR"
 
-# Download run.py from website
 echo "⬇️  Downloading run.py..."
 curl -sS "$BASE_URL/app/run.py" -o "$INSTALL_DIR/run.py"
 chmod +x "$INSTALL_DIR/run.py"
 
-# Download requirements.txt and install dependencies
 echo "⬇️  Downloading requirements.txt..."
 curl -sS "$BASE_URL/app/requirements.txt" -o "$INSTALL_DIR/requirements.txt"
 echo "🔧 Installing dependencies from requirements.txt..."
 pip3 install -r "$INSTALL_DIR/requirements.txt" > /dev/null 2>&1
 rm -f "$INSTALL_DIR/requirements.txt"
 
-# Create Automator service
 echo "⚙️  Setting up macOS context menu service..."
 
-# Remove existing workflow if present
 if [ -d "$WORKFLOW_PATH" ]; then
   rm -rf "$WORKFLOW_PATH"
 fi
 
-# Create workflow directory structure
 mkdir -p "$WORKFLOW_PATH/Contents/QuickLook"
 
-# Download workflow files
 echo "⬇️  Downloading workflow files..."
 curl -sS "$BASE_URL/app/TurboClone/Contents/document.wflow" -o "$WORKFLOW_PATH/Contents/document.wflow"
 curl -sS "$BASE_URL/app/TurboClone/Contents/Info.plist" -o "$WORKFLOW_PATH/Contents/Info.plist"

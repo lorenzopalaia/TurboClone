@@ -19,7 +19,10 @@ export default function Installation() {
   const [copiedInstall, setCopiedInstall] = useState(false);
   const [copiedUninstall, setCopiedUninstall] = useState(false);
 
-  const BASE_URL = "https://turboclone.lorenzopalaia.com";
+  const BASE_URL =
+    process.env.VERCEL_ENV === "production"
+      ? `https://${process.env.VERCEL_URL}`
+      : `http://localhost:3000`;
 
   const installCommand = `curl -sS ${BASE_URL}/install.sh | sh`;
   const uninstallCommand = `curl -sS ${BASE_URL}/uninstall.sh | sh`;
