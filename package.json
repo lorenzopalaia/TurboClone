@@ -11,7 +11,7 @@
     "update": "npx npm-check-updates -u",
     "knip": "knip",
     "sitemap": "next-sitemap",
-    "test": "sh ./public/install.sh && sh ./public/uninstall.sh"
+    "test": "sh test.sh"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.3",
