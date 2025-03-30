@@ -9,6 +9,7 @@ import {
   Github,
   MousePointerClick,
   Trash2,
+  Code,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { ItemIcon } from "@/components/ui/item";
@@ -219,8 +220,9 @@ export default function Installation() {
                 <p className="text-muted-foreground">
                   Right-click on any folder in Finder, select &quot;Quick
                   Actions&quot; and choose &quot;TurboClone&quot;. If
-                  you&apos;ve copied a GitHub URL, cloning begins instantly.
-                  Otherwise, you&apos;ll be prompted to enter a repository URL.
+                  you&apos;ve copied a GitHub URL, cloning begins instantly. You
+                  can also choose to open the repository directly in VS Code
+                  after cloning by checking the provided option.
                 </p>
               </div>
               <div
@@ -229,6 +231,46 @@ export default function Installation() {
               >
                 <ItemIcon>
                   <MousePointerClick
+                    className="text-brand h-8 w-8 stroke-1"
+                    aria-hidden="true"
+                  />
+                </ItemIcon>
+              </div>
+            </div>
+          </li>
+
+          {/* Step 4 - VS Code Integration */}
+          <li
+            className="glass-3 flex flex-col gap-6 rounded-lg p-6"
+            aria-labelledby="step4-heading"
+          >
+            <div className="flex items-center gap-4">
+              <div
+                className="bg-brand/10 flex h-10 w-10 items-center justify-center rounded-full"
+                aria-hidden="true"
+              >
+                <span className="text-brand font-semibold">4</span>
+              </div>
+              <h3 id="step4-heading" className="text-xl font-semibold">
+                Seamless VS Code Integration
+              </h3>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-6">
+              <div className="min-w-[280px] flex-1">
+                <p className="text-muted-foreground">
+                  Enable the &quot;Open in VS Code after cloning&quot; option to
+                  automatically open your newly cloned repository in Visual
+                  Studio Code. This requires the VS Code command line tool
+                  &quot;code&quot; to be installed on your system.
+                </p>
+              </div>
+              <div
+                className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4"
+                aria-hidden="true"
+              >
+                <ItemIcon>
+                  <Code
                     className="text-brand h-8 w-8 stroke-1"
                     aria-hidden="true"
                   />

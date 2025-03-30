@@ -5,7 +5,12 @@ import {
   ItemDescription,
 } from "@/components/ui/item";
 import { Section } from "@/components/ui/section";
-import { GitForkIcon, ClipboardCopyIcon, ComputerIcon } from "lucide-react";
+import {
+  GitForkIcon,
+  ClipboardCopyIcon,
+  ComputerIcon,
+  Code,
+} from "lucide-react";
 
 export default function Features() {
   return (
@@ -23,7 +28,7 @@ export default function Features() {
         </h2>
 
         <div
-          className="grid auto-rows-fr grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-4 md:grid-cols-3"
+          className="grid auto-rows-fr grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4"
           role="list"
           aria-label="Key features of TurboClone"
         >
@@ -103,6 +108,33 @@ export default function Features() {
                   Designed exclusively for Mac, TurboClone integrates perfectly
                   with your workflow. Install once and enjoy seamless GitHub
                   integration.
+                </ItemDescription>
+              </div>
+            </div>
+          </Item>
+
+          <Item role="listitem">
+            <div className="text-foreground flex flex-row items-center gap-4 p-4">
+              <div className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4">
+                <ItemIcon>
+                  <Code
+                    className="text-brand h-8 w-8 stroke-1"
+                    aria-hidden="true"
+                    role="img"
+                  />
+                </ItemIcon>
+              </div>
+              <div className="flex flex-col gap-2">
+                <ItemTitle className="text-sm leading-none font-semibold tracking-tight sm:text-base">
+                  VS Code Integration
+                </ItemTitle>
+                <ItemDescription
+                  className="text-muted-foreground flex max-w-[240px] flex-col gap-2 text-sm text-balance"
+                  itemProp="featureDescription"
+                >
+                  Open the cloned repository directly in VS Code with a single
+                  checkbox. Start coding immediately after cloning without any
+                  extra steps.
                 </ItemDescription>
               </div>
             </div>

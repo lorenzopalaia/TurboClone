@@ -1,3 +1,4 @@
+/README.md -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -34,6 +35,7 @@ TurboClone integrates seamlessly with macOS, allowing you to clone GitHub reposi
 - **One-Click Cloning**: Right-click any folder in Finder and select TurboClone to instantly clone a GitHub repository.
 - **Smart Clipboard Detection**: Copy a GitHub repository URL, and TurboClone will automatically detect it, streamlining the cloning process.
 - **Native macOS Integration**: Designed exclusively for Mac, TurboClone integrates seamlessly into your daily workflow.
+- **VS Code Integration**: Open your newly cloned repository directly in Visual Studio Code with a simple checkbox option.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -59,6 +61,9 @@ TurboClone integrates seamlessly with macOS, allowing you to clone GitHub reposi
 
 2. **Clone with a Right-Click**:
    Right-click on any folder in Finder and select "TurboClone" from the context menu. If you've copied a GitHub URL, the cloning will start immediately; otherwise, you'll be prompted to enter a repository URL.
+
+3. **Open in VS Code (Optional)**:
+   Enable the "Open in VS Code after cloning" option to automatically open the repository in Visual Studio Code after it's cloned (requires the VS Code command line tool to be installed).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
