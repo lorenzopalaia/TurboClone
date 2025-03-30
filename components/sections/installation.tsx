@@ -14,17 +14,13 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ItemIcon } from "@/components/ui/item";
 import Link from "next/link";
+import { getBaseUrl } from "@/lib/env";
 
 export default function Installation() {
   const [copiedInstall, setCopiedInstall] = useState(false);
   const [copiedUninstall, setCopiedUninstall] = useState(false);
 
-  // Environment variables for serverless functions need to be handled properly in client components
-  const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`
-    : process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
-      ? "https://turboclone.lorenzopalaia.com"
-      : "http://localhost:3000";
+  const BASE_URL = getBaseUrl();
 
   const installCommand = `curl -sS ${BASE_URL}/install.sh | sh`;
   const uninstallCommand = `curl -sS ${BASE_URL}/uninstall.sh | sh`;
@@ -190,7 +186,7 @@ export default function Installation() {
                 </p>
               </div>
               <div
-                className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4"
+                className="glass-4 hover:from-primary/15 hidden items-center self-center rounded-lg p-4 sm:flex"
                 aria-hidden="true"
               >
                 <ItemIcon>
@@ -231,7 +227,7 @@ export default function Installation() {
                 </p>
               </div>
               <div
-                className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4"
+                className="glass-4 hover:from-primary/15 hidden items-center self-center rounded-lg p-4 sm:flex"
                 aria-hidden="true"
               >
                 <ItemIcon>
@@ -271,7 +267,7 @@ export default function Installation() {
                 </p>
               </div>
               <div
-                className="glass-4 hover:from-primary/15 flex items-center self-center rounded-lg p-4"
+                className="glass-4 hover:from-primary/15 hidden items-center self-center rounded-lg p-4 sm:flex"
                 aria-hidden="true"
               >
                 <ItemIcon>
