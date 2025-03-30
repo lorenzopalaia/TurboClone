@@ -9,29 +9,18 @@ SERVICE_NAME="TurboClone"
 AUTOMATOR_DIR="$HOME/Library/Services"
 WORKFLOW_PATH="$AUTOMATOR_DIR/$SERVICE_NAME.workflow"
 
-
 set -a
 if [ -f "$PROJECT_ROOT/.env.local" ]; then
   source "$PROJECT_ROOT/.env.local"
+  if [ -n "$NEXT_PUBLIC_LOCALHOST_URL" ]; then
+    BASE_URL="$NEXT_PUBLIC_LOCALHOST_URL"
+  else
+    BASE_URL="https://turboclone.lorenzopalaia.com"
+  fi
+else
+  BASE_URL="https://turboclone.lorenzopalaia.com"
 fi
 set +a
-
-if [ -n "$VERCEL" ]; then
-  echo "🚀 Running on Vercel..."
-else
-  echo "💻 Running locally..."
-fi
-
-if [ -n "$NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL" ]; then
-  BASE_URL="https://$NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL"
-elif [ "$NEXT_PUBLIC_VERCEL_ENV" = "production" ]; then
-  BASE_URL="${NEXT_PUBLIC_PRODUCTION_URL:-}"
-else
-  BASE_URL="${NEXT_PUBLIC_LOCALHOST_URL:-}"
-fi
-
-echo "🌍 Base URL: $BASE_URL"
-exit 0
 
 echo "🚀 Installing TurboClone..."
 
