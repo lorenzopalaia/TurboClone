@@ -20,8 +20,8 @@ export default function Installation() {
   const [copiedUninstall, setCopiedUninstall] = useState(false);
 
   // Environment variables for serverless functions need to be handled properly in client components
-  const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`
     : process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
       ? "https://turboclone.lorenzopalaia.com"
       : "http://localhost:3000";
