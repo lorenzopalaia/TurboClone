@@ -19,9 +19,12 @@ export default function Installation() {
   const [copiedInstall, setCopiedInstall] = useState(false);
   const [copiedUninstall, setCopiedUninstall] = useState(false);
 
-  const BASE_URL = process.env.VERCEL_ENV
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : `http://localhost:3000`;
+  // Environment variables for serverless functions need to be handled properly in client components
+  const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    : process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+      ? "https://turboclone.lorenzopalaia.com"
+      : "http://localhost:3000";
 
   const installCommand = `curl -sS ${BASE_URL}/install.sh | sh`;
   const uninstallCommand = `curl -sS ${BASE_URL}/uninstall.sh | sh`;
