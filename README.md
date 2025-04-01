@@ -37,6 +37,10 @@ TurboClone integrates seamlessly with macOS, allowing you to clone GitHub reposi
 - **Native macOS Integration**: Designed exclusively for Mac, TurboClone integrates seamlessly into your daily workflow.
 - **VS Code Integration**: Open your newly cloned repository directly in Visual Studio Code with a simple checkbox option.
 
+### System Design
+
+![System Design](./repo_assets/system-design.png)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
